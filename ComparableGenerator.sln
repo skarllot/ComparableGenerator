@@ -14,11 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3EF5BAF3-E5E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AD92615E-50B3-42A9-AD84-B808458BCEDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "src\ConsoleApp\ConsoleApp.csproj", "{5BBAEB5E-5265-48E2-90AF-1302E9834FEF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiqub.Generators.Comparable", "src\Raiqub.Generators.Comparable\Raiqub.Generators.Comparable.csproj", "{C591C934-D437-4577-B901-0E4CAD1453C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiqub.Generators.Comparable.Tests", "tests\Raiqub.Generators.Comparable.Tests\Raiqub.Generators.Comparable.Tests.csproj", "{72CCBFCA-AB50-496E-BDC7-1B96A7DB6F6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiqub.Generators.Comparable.IntegrationTests", "tests\Raiqub.Generators.Comparable.IntegrationTests\Raiqub.Generators.Comparable.IntegrationTests.csproj", "{D61B3EE1-52B1-438D-AB04-52FACE051FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiqub.Generators.Comparable.Abstractions", "src\Raiqub.Generators.Comparable.Abstractions\Raiqub.Generators.Comparable.Abstractions.csproj", "{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,15 +31,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5BBAEB5E-5265-48E2-90AF-1302E9834FEF} = {3EF5BAF3-E5E3-4693-9AE3-958A525A361D}
 		{C591C934-D437-4577-B901-0E4CAD1453C7} = {3EF5BAF3-E5E3-4693-9AE3-958A525A361D}
 		{72CCBFCA-AB50-496E-BDC7-1B96A7DB6F6D} = {AD92615E-50B3-42A9-AD84-B808458BCEDA}
+		{D61B3EE1-52B1-438D-AB04-52FACE051FA8} = {AD92615E-50B3-42A9-AD84-B808458BCEDA}
+		{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3} = {3EF5BAF3-E5E3-4693-9AE3-958A525A361D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5BBAEB5E-5265-48E2-90AF-1302E9834FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BBAEB5E-5265-48E2-90AF-1302E9834FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BBAEB5E-5265-48E2-90AF-1302E9834FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BBAEB5E-5265-48E2-90AF-1302E9834FEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C591C934-D437-4577-B901-0E4CAD1453C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C591C934-D437-4577-B901-0E4CAD1453C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C591C934-D437-4577-B901-0E4CAD1453C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,5 +45,13 @@ Global
 		{72CCBFCA-AB50-496E-BDC7-1B96A7DB6F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CCBFCA-AB50-496E-BDC7-1B96A7DB6F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72CCBFCA-AB50-496E-BDC7-1B96A7DB6F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61B3EE1-52B1-438D-AB04-52FACE051FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61B3EE1-52B1-438D-AB04-52FACE051FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61B3EE1-52B1-438D-AB04-52FACE051FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61B3EE1-52B1-438D-AB04-52FACE051FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEADCF23-C3B2-4D47-ABFF-3CD45B749CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

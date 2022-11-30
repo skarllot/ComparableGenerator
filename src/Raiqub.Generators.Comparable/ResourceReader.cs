@@ -8,12 +8,6 @@ internal static class ResourceReader
 {
     private static readonly Assembly _assembly = typeof(ResourceReader).Assembly;
 
-    public static string ComparableAttribute()
-    {
-        const string resourceName = "Raiqub.Generators.Comparable.Resources.ComparableAttribute.cs";
-        return GetString(resourceName) ?? "// Not found";
-    }
-
     public static string ComparablePartial()
     {
         const string resourceName = "Raiqub.Generators.Comparable.Resources.ComparablePartial.cs";

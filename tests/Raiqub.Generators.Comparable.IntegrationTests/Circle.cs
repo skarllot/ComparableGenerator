@@ -1,6 +1,4 @@
-﻿using Raiqub.Generators.Comparable;
-
-namespace ConsoleApp;
+﻿namespace Raiqub.Generators.Comparable.IntegrationTests;
 
 [Comparable]
 public partial class Circle

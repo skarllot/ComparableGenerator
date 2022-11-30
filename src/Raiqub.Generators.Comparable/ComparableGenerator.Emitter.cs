@@ -89,7 +89,7 @@ public partial class ComparableGenerator
                 new ComparableToGenerate(
                     kind,
                     typeSymbol.IsSealed,
-                    typeSymbol.ContainingNamespace?.Name ?? string.Empty,
+                    typeSymbol.ContainingNamespace?.ToDisplayString() ?? string.Empty,
                     typeSymbol.Name));
         }
 
@@ -107,7 +107,8 @@ public partial class ComparableGenerator
         {
             TypeKind.Class => "class",
             TypeKind.Record => "record",
-            TypeKind.Struct => "struct"
+            TypeKind.Struct => "struct",
+            _ => "class"
         };
 
         return new StringBuilder(ResourceReader.ComparablePartial())
