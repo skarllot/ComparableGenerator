@@ -22,6 +22,9 @@ public static class TestHelper
 
     private static IEnumerable<PortableExecutableReference> GetReferences()
     {
-        yield return MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
+        return AppDomain.CurrentDomain.GetAssemblies()
+            .Append(typeof(ComparableAttribute).Assembly)
+            .Where(it => !it.IsDynamic && !string.IsNullOrWhiteSpace(it.Location))
+            .Select(it => MetadataReference.CreateFromFile(it.Location));
     }
 }

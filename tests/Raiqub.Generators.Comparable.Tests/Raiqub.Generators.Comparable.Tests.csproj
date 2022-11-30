@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\src\Raiqub.Generators.Comparable.Abstractions\Raiqub.Generators.Comparable.Abstractions.csproj"/>
         <ProjectReference Include="..\..\src\Raiqub.Generators.Comparable\Raiqub.Generators.Comparable.csproj"/>
     </ItemGroup>
 
