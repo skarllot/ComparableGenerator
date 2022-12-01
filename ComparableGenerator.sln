@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{4E5008F6
 		LICENSE = LICENSE
 		README.md = README.md
 		Directory.Build.props = Directory.Build.props
+		nuget.integration-tests.config = nuget.integration-tests.config
+		nuget-integration-test.sh = nuget-integration-test.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3EF5BAF3-E5E3-4693-9AE3-958A525A361D}"
