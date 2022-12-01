@@ -5,16 +5,20 @@ using System;
 
 #pragma warning disable CS1591 // publicly visible type or member must be documented
 
+// +NamespaceBegin
 namespace NAMESPACE
 {
-    partial class CLASS : IComparable, IComparable<CLASS>, IEquatable<CLASS>
+// -NamespaceBegin
+    partial class CLASS : IComparable, IComparable<CLASS?>, IEquatable<CLASS?>
     {
         public static bool operator <(CLASS? left, CLASS? right) => Compare(left, right) < 0;
         public static bool operator >(CLASS? left, CLASS? right) => Compare(left, right) > 0;
         public static bool operator <=(CLASS? left, CLASS? right) => Compare(left, right) <= 0;
         public static bool operator >=(CLASS? left, CLASS? right) => Compare(left, right) >= 0;
+// +EqualityOperators
         public static bool operator ==(CLASS? left, CLASS? right) => Compare(left, right) == 0;
         public static bool operator !=(CLASS? left, CLASS? right) => Compare(left, right) != 0;
+// -EqualityOperators
 
         public int CompareTo(object? obj)
         {
@@ -25,16 +29,22 @@ namespace NAMESPACE
 
         public virtual bool Equals(CLASS? other) => CompareTo(other) == 0;
 
+// +ObjectEquals
         public override bool Equals(object? obj)
         {
             return obj is CLASS other ? Equals(other) : throw new ArgumentException($"Object must be of type {nameof(CLASS)}");
         }
 
+// -ObjectEquals
         private static int Compare(CLASS? left, CLASS? right)
         {
+// +IsByRef
             if (ReferenceEquals(left, right)) return 0;
             if (left is null) return -1;
+// -IsByRef
             return left.CompareTo(right);
         }
     }
+// +NamespaceEnd
 }
+// -NamespaceEnd

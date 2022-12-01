@@ -111,11 +111,17 @@ public partial class ComparableGenerator
             _ => "class"
         };
 
-        return new StringBuilder(ResourceReader.ComparablePartial())
+        return new StringBuilder(ResourceProvider.ComparablePartial)
+            .RemoveFragmentIf("NamespaceBegin", string.IsNullOrEmpty(type.Namespace))
+            .RemoveFragmentIf("NamespaceEnd", string.IsNullOrEmpty(type.Namespace))
+            .RemoveFragmentIf("EqualityOperators", type.Kind == TypeKind.Record)
+            .RemoveFragmentIf("IsByRef", type.Kind == TypeKind.Struct)
+            .RemoveFragmentIf("ObjectEquals", type.Kind == TypeKind.Record)
             .Replace("NAMESPACE", type.Namespace)
             .Replace("class", kind)
             .Replace("CLASS", type.Name)
-            .ReplaceIf(type.IsSealed, " virtual ", "")
+            .ReplaceIf(type.IsSealed, " virtual", "")
+            .ReplaceIf(type.Kind == TypeKind.Struct, type.Name + "?", type.Name)
             .ToString();
     }
 }

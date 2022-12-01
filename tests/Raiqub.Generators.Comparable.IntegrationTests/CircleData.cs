@@ -1,11 +1,9 @@
 ﻿namespace Raiqub.Generators.Comparable.IntegrationTests;
 
 [Comparable]
-public partial class Circle
+public partial record CircleData(float Radius)
 {
-    public float Radius { get; init; }
-
-    public int CompareTo(Circle? other)
+    public int CompareTo(CircleData? other)
     {
         if (other is null) return 1;
         return Radius.CompareTo(other.Radius);
