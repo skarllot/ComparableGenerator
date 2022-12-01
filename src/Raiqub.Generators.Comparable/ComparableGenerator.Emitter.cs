@@ -116,6 +116,7 @@ public partial class ComparableGenerator
             .RemoveFragmentIf("NamespaceEnd", string.IsNullOrEmpty(type.Namespace))
             .RemoveFragmentIf("EqualityOperators", type.Kind == TypeKind.Record)
             .RemoveFragmentIf("IsByRef", type.Kind == TypeKind.Struct)
+            .RemoveFragmentIf("IsValue", type.Kind != TypeKind.Struct)
             .RemoveFragmentIf("ObjectEquals", type.Kind == TypeKind.Record)
             .Replace("NAMESPACE", type.Namespace)
             .Replace("class", kind)
