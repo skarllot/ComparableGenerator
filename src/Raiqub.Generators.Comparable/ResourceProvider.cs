@@ -12,7 +12,7 @@ internal static class ResourceProvider
     private static string? comparablePartial;
 
     public static string ComparablePartial =>
-        comparablePartial ??= LoadEmbeddedResource(ResourcePrefix + "ComparablePartial.cs");
+        comparablePartial ??= LoadEmbeddedResource(ResourcePrefix + "ComparablePartial.mustache");
 
     private static string LoadEmbeddedResource(string resourceName)
     {

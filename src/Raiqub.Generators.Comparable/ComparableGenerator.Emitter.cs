@@ -107,26 +107,6 @@ public partial class ComparableGenerator
 
     private static string GetFileContent(ComparableToGenerate type)
     {
-        string kind = type.Kind switch
-        {
-            TypeKind.Class => "class",
-            TypeKind.Record => "record",
-            TypeKind.Struct => "struct",
-            _ => "class"
-        };
-
-        return new StringBuilder(ResourceProvider.ComparablePartial)
-            .RemoveFragmentIf("NamespaceBegin", string.IsNullOrEmpty(type.Namespace))
-            .RemoveFragmentIf("NamespaceEnd", string.IsNullOrEmpty(type.Namespace))
-            .RemoveFragmentIf("EqualityOperators", type.Kind == TypeKind.Record)
-            .RemoveFragmentIf("IsByRef", type.Kind == TypeKind.Struct)
-            .RemoveFragmentIf("IsValue", type.Kind != TypeKind.Struct)
-            .RemoveFragmentIf("ObjectEquals", type.Kind == TypeKind.Record)
-            .Replace("NAMESPACE", type.Namespace)
-            .Replace("class", kind)
-            .Replace("CLASS", type.Name)
-            .ReplaceIf(type.IsSealed, " virtual", "")
-            .ReplaceIf(type.Kind == TypeKind.Struct, type.Name + "?", type.Name)
-            .ToString();
+        return Stubble.Render(ResourceProvider.ComparablePartial, type);
     }
 }

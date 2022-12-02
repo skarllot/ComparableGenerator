@@ -18,7 +18,7 @@ namespace TestNamespace
         public static bool operator ==(Circle? left, Circle? right) => Compare(left, right) == 0;
         public static bool operator !=(Circle? left, Circle? right) => Compare(left, right) != 0;
 
-        public int CompareTo(object? obj)
+        public virtual int CompareTo(object? obj)
         {
             if (ReferenceEquals(null, obj)) return 1;
             if (ReferenceEquals(this, obj)) return 0;
