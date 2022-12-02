@@ -8,7 +8,8 @@ using System;
 
 namespace TestNamespace
 {
-    partial class OtherCircle : IComparable, IComparable<OtherCircle?>, IEquatable<OtherCircle?>
+    partial class OtherCircle
+        : IComparable, IComparable<OtherCircle?>, IEquatable<OtherCircle?>
     {
         public static bool operator <(OtherCircle? left, OtherCircle? right) => Compare(left, right) < 0;
         public static bool operator >(OtherCircle? left, OtherCircle? right) => Compare(left, right) > 0;
