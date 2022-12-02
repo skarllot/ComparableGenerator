@@ -89,7 +89,7 @@ public partial class ComparableGenerator
                 new ComparableToGenerate(
                     kind,
                     typeSymbol.IsSealed,
-                    typeSymbol.ContainingNamespace?.ToDisplayString() ?? string.Empty,
+                    type.GetNamespace(),
                     typeSymbol.Name));
         }
 
