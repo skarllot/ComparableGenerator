@@ -9,12 +9,16 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using Raiqub.Generators.Comparable.Common;
 using Raiqub.Generators.Comparable.Models;
+using Stubble.Core;
+using Stubble.Core.Builders;
 using TypeKind = Raiqub.Generators.Comparable.Models.TypeKind;
 
 namespace Raiqub.Generators.Comparable;
 
 public partial class ComparableGenerator
 {
+    private static readonly StubbleVisitorRenderer Stubble = new StubbleBuilder().Build();
+
     private static void Emit(
         SourceProductionContext context,
         (ImmutableArray<TypeDeclarationSyntax> Types, Compilation Compilation) data)

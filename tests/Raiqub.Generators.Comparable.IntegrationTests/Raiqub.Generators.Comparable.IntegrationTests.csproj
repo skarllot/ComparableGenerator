@@ -10,6 +10,7 @@
     <ItemGroup>
         <PackageReference Include="FluentAssertions" Version="6.8.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+        <PackageReference Include="Stubble.Core" Version="1.10.8" PrivateAssets="all" GeneratePathProperty="true" />
         <PackageReference Include="xunit" Version="2.4.2" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,6 +25,10 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Raiqub.Generators.Comparable.Abstractions\Raiqub.Generators.Comparable.Abstractions.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
         <ProjectReference Include="..\..\src\Raiqub.Generators.Comparable\Raiqub.Generators.Comparable.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Analyzer Include="$(PkgStubble_Core)\lib\netstandard2.0\*.dll" />
     </ItemGroup>
 
 </Project>

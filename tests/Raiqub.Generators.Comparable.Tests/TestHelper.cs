@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Stubble.Core.Builders;
 
 namespace Raiqub.Generators.Comparable.Tests;
 
@@ -24,6 +25,7 @@ public static class TestHelper
     {
         return AppDomain.CurrentDomain.GetAssemblies()
             .Append(typeof(ComparableAttribute).Assembly)
+            .Append(typeof(StubbleBuilder).Assembly)
             .Where(it => !it.IsDynamic && !string.IsNullOrWhiteSpace(it.Location))
             .Select(it => MetadataReference.CreateFromFile(it.Location));
     }
